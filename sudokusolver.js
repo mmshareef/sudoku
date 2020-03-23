@@ -19,13 +19,16 @@ for(var h = 0; h < arr.length; h++){
 x = {};
 if(arr[r][h] === 0){
    for(var i = 0; i < 9; i++){
+       // Checking for each row elements possibilty
        if(arr[r][i] > 0){
            x[arr[r][i]] = 1;
        }
+       // Checking for each col elements possibilty
        if(arr[i][h] > 0){
            x[arr[i][h]] = 1;
        }
    }
+   // Checking for 3*3 grid elements possibilty
    for(var rgrid = Math.floor(r / 3) * 3; rgrid < Math.floor(r / 3) * 3 + 3; rgrid++){
        for(var hgrid = Math.floor(h / 3) * 3; hgrid < Math.floor(h / 3) * 3 + 3; hgrid++){
            if(arr[rgrid][hgrid]){
@@ -33,3 +36,22 @@ if(arr[r][h] === 0){
            }
        }
    }
+   // Replacing the zeros with  possible numbers
+   noNum = Object.keys(x);
+   if(noNum.length === 8){
+       for(var i = 0; i < 10; i++){
+           if(noNum.indexOf(i.toString()) < 0){
+               arr[r][h] = i;
+           }
+       }
+   }
+   else{
+         total++;
+       }
+}
+}
+}
+}
+return arr;
+}
+console.log(solveGame(sudoko));
