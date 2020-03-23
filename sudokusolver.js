@@ -28,7 +28,7 @@ if(arr[r][h] === 0){
            x[arr[i][h]] = 1;
        }
    }
-   // Checking for 3*3 grid elements possibilty
+   // Checking for 3*3 grid elements possibiltygit 
    for(var rgrid = Math.floor(r / 3) * 3; rgrid < Math.floor(r / 3) * 3 + 3; rgrid++){
        for(var hgrid = Math.floor(h / 3) * 3; hgrid < Math.floor(h / 3) * 3 + 3; hgrid++){
            if(arr[rgrid][hgrid]){
